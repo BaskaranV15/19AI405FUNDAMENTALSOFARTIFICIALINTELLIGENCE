@@ -57,7 +57,6 @@ Remove node 4 from the front of queue and visit the unvisited neighbours and pus
 Now, Queue becomes empty, So, terminate these process of iteration.
 
 
-
 # Algorithm:
 
 Construct a Graph with Nodes and Edges
@@ -72,8 +71,6 @@ If Not Visited, add it to the Queue. Else Continue.
 
 Iterate steps 4 and 5 until all nodes get visited, and there are no more unvisited nodes.
 
-
-
 # Sample Input
 
 7 9 <BR>
@@ -86,14 +83,9 @@ C D <BR>
 D E <BR>
 D G <BR>
 G F <BR>
-
 # Sample Output
-
-
-
-
+![Screenshot 2023-11-05 004404](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/2cb6f056-8a49-4eb4-89ae-cdc61c5f150d)
 # Sample Input
-
 5 6 <BR>
 0 1 <BR>
 0 2 <BR>
@@ -101,16 +93,8 @@ G F <BR>
 1 3 <BR>
 2 4 <BR>
 3 4 <BR>
-
 # Sample Output
+![Screenshot 2023-11-05 004447](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/60977d22-0549-498f-8a76-8d0b26bf3104)
 
 # Result:
-
 Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.
-
-
-
-
-
-
-
