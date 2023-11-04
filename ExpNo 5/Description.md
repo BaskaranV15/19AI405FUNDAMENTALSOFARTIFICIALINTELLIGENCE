@@ -1,6 +1,6 @@
 <h1>ExpNo 5 : Implement Minimax Search Algorithm for a Simple TIC-TAC-TOE game</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: BASKARAN V</h3>
+<h3>Register Number:212222230020</h3>
 <H3>Aim:</H3>
 <p>
     Implement Minimax Search Algorithm for a Simple TIC-TAC-TOE game
@@ -49,16 +49,17 @@ You'll notice that this algorithm is recursive, it flips back and forth between 
 Let's walk through the algorithm's execution with the full move tree, and show why, algorithmically, the instant winning move will be picked:
 
 ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/12b82542-54fb-47e7-8f76-b75fddc40f92)
-<ul>
-<li>It's X's turn in state 1. X generates the states 2, 3, and 4 and calls minimax on those states.</li>
-<li>State 2 pushes the score of +10 to state 1's score list, because the game is in an end state.</li>
-<li>State 3 and 4 are not in end states, so 3 generates states 5 and 6 and calls minimax on them, while state 4 generates states 7 and 8 and calls minimax on them.</li>
-<li>State 5 pushes a score of -10 onto state 3's score list, while the same happens for state 7 which pushes a score of -10 onto state 4's score list.</li>
-<li>State 6 and 8 generate the only available moves, which are end states, and so both of them add the score of +10 to the move lists of states 3 and 4.</li>
-<li>Because it is O's turn in both state 3 and 4, O will seek to find the minimum score, and given the choice between -10 and +10, both states 3 and 4 will yield -10.</li>
-<li>>Finally the score list for states 2, 3, and 4 are populated with +10, -10 and -10 respectively, and state 1 seeking to maximize the score will chose the winning move with score +10, state 2.</li
-</ul>
-##A Coded Version of Minimax Hopefully by now you have a rough sense of how th e minimax algorithm determines the best move to play. Let's examine my implementation of the algorithm to solidify the understanding:
+
+It's X's turn in 
+state 1. X generates the states 2, 3, and 4 and calls minimax on those states.
+State 2 pushes the score of +10 to state 1's score list, because the game is in an end state.
+State 3 and 4 are not in end states, so 3 generates states 5 and 6 and calls minimax on them, while state 4 generates states 7 and 8 and calls minimax on them.
+State 5 pushes a score of -10 onto state 3's score list, while the same happens for state 7 which pushes a score of -10 onto state 4's score list.<
+State 6 and 8 generate the only available moves, which are end states, and so both of them add the score of +10 to the move lists of states 3 and 4.
+Because it is O's turn in both state 3 and 4, O will seek to find the minimum score, and given the choice between -10 and +10, both states 3 and 4 will yield -10.
+Finally the score list for states 2, 3, and 4 are populated with +10, -10 and -10 respectively, and state 1 seeking to maximize the score will chose the winning move with score +10, state 2.
+
+## A Coded Version of Minimax Hopefully by now you have a rough sense of how th e minimax algorithm determines the best move to play. Let's examine my implementation of the algorithm to solidify the understanding:
 
 Here is the function for scoring the game:
 
@@ -101,16 +102,207 @@ def minimax(game)
         return scores[min_score_index]
     end
 end
+# PROGRAM
+```
+import time
 
-<hr>
-<h2>Sample Input and Output</h2>
+class Game:
+    def __init__(self):
+        self.initialize_game()
 
-![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/6b668685-8bcc-43c5-b5c2-ddd43f3da84a)
-![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/8ca1b08a-8312-4ef5-89df-e69b7b2c3fa2)
-![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/dc06427a-d4ce-43a1-95bd-9acfaefac323)
-![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/a8a27e2a-6fd4-46a2-afb5-6d27b8556702)
-![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/a2acb6a1-ed8e-42e5-8968-fe805e4b0255)
+    def initialize_game(self):
+        self.current_state = [['.','.','.'],
+                              ['.','.','.'],
+                              ['.','.','.']]
 
-<hr>
-<h2>Result:</h2>
-<p>Thus,Implementation of  Minimax Search Algorithm for a Simple TIC-TAC-TOE game wasa done successfully.</p>
+        # Player X always plays first
+        self.player_turn = 'X'
+
+    def draw_board(self):
+        for i in range(0, 3):
+            for j in range(0, 3):
+                print('{}|'.format(self.current_state[i][j]), end=" ")
+            print()
+        print()
+    def is_valid(self, px, py):
+        if px < 0 or px > 2 or py < 0 or py > 2:
+            return False
+        elif self.current_state[px][py] != '.':
+            return False
+        else:
+            return True
+    def is_end(self):
+    # Vertical win
+        for i in range(0, 3):
+            if (self.current_state[0][i] != '.' and
+                self.current_state[0][i] == self.current_state[1][i] and
+                self.current_state[1][i] == self.current_state[2][i]):
+                return self.current_state[0][i]
+
+        # Horizontal win
+        for i in range(0, 3):
+            if (self.current_state[i] == ['X', 'X', 'X']):
+                return 'X'
+            elif (self.current_state[i] == ['O', 'O', 'O']):
+                return 'O'
+
+    # Main diagonal win
+        if (self.current_state[0][0] != '.' and
+            self.current_state[0][0] == self.current_state[1][1] and
+            self.current_state[0][0] == self.current_state[2][2]):
+            return self.current_state[0][0]
+
+    # Second diagonal win
+        if (self.current_state[0][2] != '.' and
+            self.current_state[0][2] == self.current_state[1][1] and
+            self.current_state[0][2] == self.current_state[2][0]):
+            return self.current_state[0][2]
+
+    # Is the whole board full?
+        for i in range(0, 3):
+            for j in range(0, 3):
+            # There's an empty field, we continue the game
+                if (self.current_state[i][j] == '.'):
+                    return None
+
+    # It's a tie!
+        return '.'
+    def max(self):
+
+        # Possible values for maxv are:
+        # -1 - loss
+        # 0  - a tie
+        # 1  - win
+
+        # We're initially setting it to -2 as worse than the worst case:
+        maxv = -2
+
+        px = None
+        py = None
+
+        result = self.is_end()
+
+        # If the game came to an end, the function needs to return
+        # the evaluation function of the end. That can be:
+        # -1 - loss
+        # 0  - a tie
+        # 1  - win
+        if result == 'X':
+            return (-1, 0, 0)
+        elif result == 'O':
+            return (1, 0, 0)
+        elif result == '.':
+            return (0, 0, 0)
+
+        for i in range(0, 3):
+            for j in range(0, 3):
+                if self.current_state[i][j] == '.':
+                    # On the empty field player 'O' makes a move and calls Min
+                    # That's one branch of the game tree.
+                    self.current_state[i][j] = 'O'
+                    (m, min_i, min_j) = self.min()
+                    # Fixing the maxv value if needed
+                    if m > maxv:
+                        maxv = m
+                        px = i
+                        py = j
+                    # Setting back the field to empty
+                    self.current_state[i][j] = '.'
+        return (maxv, px, py)
+
+    def min(self):
+
+        # Possible values for minv are:
+        # -1 - win
+        # 0  - a tie
+        # 1  - loss
+
+        # We're initially setting it to 2 as worse than the worst case:
+        minv = 2
+
+        qx = None
+        qy = None
+
+        result = self.is_end()
+
+        if result == 'X':
+            return (-1, 0, 0)
+        elif result == 'O':
+            return (1, 0, 0)
+        elif result == '.':
+            return (0, 0, 0)
+
+        for i in range(0, 3):
+            for j in range(0, 3):
+                if self.current_state[i][j] == '.':
+                    self.current_state[i][j] = 'X'
+                    (m, max_i, max_j) = self.max()
+                    if m < minv:
+                        minv = m
+                        qx = i
+                        qy = j
+                    self.current_state[i][j] = '.'
+
+        return (minv, qx, qy)
+    def play(self):
+        while True:
+            self.draw_board()
+            self.result = self.is_end()
+
+            # Printing the appropriate message if the game has ended
+            if self.result != None:
+                if self.result == 'X':
+                    print('The winner is X!')
+                elif self.result == 'O':
+                    print('The winner is O!')
+                elif self.result == '.':
+                    print("It's a tie!")
+
+                self.initialize_game()
+                return
+
+            # If it's player's turn
+            if self.player_turn == 'X':
+
+                while True:
+
+                    start = time.time()
+                    (m, qx, qy) = self.min()
+                    end = time.time()
+                    print('Evaluation time: {}s'.format(round(end - start, 7)))
+                    print('Recommended move: X = {}, Y = {}'.format(qx, qy))
+
+                    px = int(input('Insert the X coordinate: '))
+                    py = int(input('Insert the Y coordinate: '))
+
+                    (qx, qy) = (px, py)
+
+                    if self.is_valid(px, py):
+                        self.current_state[px][py] = 'X'
+                        self.player_turn = 'O'
+                        break
+                    else:
+                        print('The move is not valid! Try again.')
+
+            # If it's AI's turn
+            else:
+                (m, px, py) = self.max()
+                self.current_state[px][py] = 'O'
+                self.player_turn = 'X'
+def main():
+    g = Game()
+    g.play()
+
+if __name__ == "__main__":
+    main()
+```
+
+## Sample Input and Output<
+![Screenshot 2023-11-05 013302](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/cf6e3ec8-cb90-41a4-a86c-6ab6d61bce61)
+
+![Screenshot 2023-11-05 013316](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/507e7c75-8b93-4a58-8cb2-2e971f264e80)
+
+
+
+# Result:
+Thus,Implementation of  Minimax Search Algorithm for a Simple TIC-TAC-TOE game wasa done successfully.
