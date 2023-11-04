@@ -1,9 +1,9 @@
-<h1>ExpNo 1 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: BASKARAN  V N</h3>
-<h3>Register Number/Staff Id: 212222230020</h3>
-<H3>Aim:</H3>
-<p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
-<h3>Theory:</h3>
+# ExpNo 1 : Implement Depth First Search Traversal of a Graph 
+# Name: BASKARAN  V N
+# Register Number: 212222230020
+# Aim:
+## To Implement Depth First Search Traversal of a Graph using Python 3.
+## Theory:
 <strong>Depth First Traversal </strong>(or DFS) for a graph is like Depth First Traversal of a tree. The only catch here is that, unlike trees, graphs may contain cycles (a node may be visited twice). Use a Boolean visited array to avoid processing a node more than once. A graph can have more than one DFS traversal. 
 Depth-first search is an algorithm for traversing or searching trees or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.
 Step 1: Initially, stack and visited arrays are empty.
@@ -45,14 +45,13 @@ Visit node 3
 
 Now, the Stack becomes empty, which means we have visited all the nodes, and our DFS traversal ends.
 
-<h3>Algorithm:</h3>
-<B><ol>
- <li>Construct a Graph with Nodes and Edges</li>
- <li>Depth First Search Uses Stack and Recursion</li>
- <li>Insert a START node to the STACK</li>
- <li>Find its Successors Or neighbors and Check whether the node is visited or not</li>
- <li>If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.</li>
-</ol></B>
+# Algorithm:
+
+ Construct a Graph with Nodes and Edges
+ Depth First Search Uses Stack and Recursion
+ Insert a START node to the STACK
+ Find its Successors Or neighbors and Check whether the node is visited or not
+ If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.
 # Program:
 ```
 Depth First Search uses STACK AND RECURSION
@@ -79,20 +78,18 @@ path=[]
 traversedpath=dfs(graph,start,visited,path)
 print(traversedpath)
 ```
-```
-<h3>Sample Input</h3>
+## Sample Input
 
 
-<h3>Sample Output</h3>
+## Sample Output
 ![Screenshot 2023-11-05 001619](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/c6e06649-d5a5-4621-b983-f05d1a11195d)
 
-<h3>Sample Input</h3>
+## Sample Input
 
 
-<h3>Sample Output</h3>
+## Sample Output
 ![Screenshot 2023-11-05 001855](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/568a7ba0-affb-4698-a4a6-fbc0a71d0a8c)
 
-<h3>Result:</h3>
-
-<p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
+# Result:
+Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.
 
