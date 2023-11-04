@@ -50,7 +50,7 @@
 <hr>
 <h2> program</h2>
 <hr>
-```
+
 from collections import defaultdict
 H_dist ={}
 def aStarAlgo(start_node, stop_node):
@@ -154,7 +154,7 @@ print(H_dist)
 Graph_nodes=graph
 print(graph)
 aStarAlgo('A', 'G')
-```
+
 <hr>
 ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/b1377c3f-011a-4c0f-a843-516842ae056a)
 
