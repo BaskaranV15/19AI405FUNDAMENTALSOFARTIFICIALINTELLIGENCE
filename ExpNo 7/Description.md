@@ -102,6 +102,7 @@ else:
 ```
 # Sample Input and Output:
 
+![Screenshot 2023-11-05 015044](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/28c640c4-e53e-474e-9f7f-084c4e3267bb)
 
 # Result:
 <p> Thus a Cryptarithmetic Problem was solved using Python successfully</p>
