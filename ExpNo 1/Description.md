@@ -82,14 +82,16 @@ print(traversedpath)
 ```
 
 <h3>Sample Input</h3>
+
+
+<h3>Sample Output</h3>
 ![Screenshot 2023-11-05 001619](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/c6e06649-d5a5-4621-b983-f05d1a11195d)
 
-<h3>Sample Output</h3>
-
 <h3>Sample Input</h3>
-![Screenshot 2023-11-05 001855](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/568a7ba0-affb-4698-a4a6-fbc0a71d0a8c)
+
 
 <h3>Sample Output</h3>
+![Screenshot 2023-11-05 001855](https://github.com/BaskaranV15/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/118703522/568a7ba0-affb-4698-a4a6-fbc0a71d0a8c)
 
 <h3>Result:</h3>
 
