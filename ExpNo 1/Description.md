@@ -56,7 +56,6 @@ Now, the Stack becomes empty, which means we have visited all the nodes, and our
 # Program:
 ```
 Depth First Search uses STACK AND RECURSION
-
 #import defaultdict
 from collections import defaultdict
 def dfs(graph,start,visited,path):
@@ -79,9 +78,8 @@ visited=defaultdict(bool)
 path=[]
 traversedpath=dfs(graph,start,visited,path)
 print(traversedpath)
-
 ```
-
+```
 <h3>Sample Input</h3>
 
 
