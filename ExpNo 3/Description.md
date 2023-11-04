@@ -217,3 +217,5 @@ G 0 <br>
 
 # Sample Output
 Path found: ['A', 'E', 'D', 'G']
+# Result
+Thus, the implementation of A * Search algorithm for a Graph using Python 3. is successfully executed.
