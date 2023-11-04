@@ -1,22 +1,25 @@
-<h1>ExpNo 2 : Implement Breadth First Search Traversal of a Graph</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
-<H3>Aim:</H3>
-<p>To Implement Breadth First Search Traversal of a Graph using Python 3.</p>
-<h3>Theory:</h3>
-<p>Breadth-First Traversal (or Search) for a graph is like the Breadth-First Traversal of a tree.
+# ExpNo 2 : Implement Breadth First Search Traversal of a Graph
+# Name: BASKARAN V
+# Register Number:212222230020
+# Aim:
+To Implement Breadth First Search Traversal of a Graph using Python 3.
+# Theory:
+Breadth-First Traversal (or Search) for a graph is like the Breadth-First Traversal of a tree.
 The only catch here is that, unlike trees, graphs may contain cycles so that we may come to the same node again. To avoid processing a node more than once, we divide the vertices into two categories:
-<ol><li>Visited</li>
-<li>Not Visited</li></ol>
-</p>
-<p>A Boolean visited array is used to mark the visited vertices. For simplicity, it is assumed that all vertices are reachable from the starting vertex. BFS uses a queue data structure for traversal.</p>
-<p><strong>How does BFS work?</strong><br>
+
+Visited
+
+Not Visited
+
+A Boolean visited array is used to mark the visited vertices. For simplicity, it is assumed that all vertices are reachable from the starting vertex. BFS uses a queue data structure for traversal.
+
+How does BFS work?
+
   Starting from the root, all the nodes at a particular level are visited first, and then the next level nodes are traversed until all the nodes are visited.
 To do this, a queue is used. All the adjacent unvisited nodes of the current level are pushed into the queue, and the current-level nodes are marked visited and popped from the queue.
 Illustration:
 Let us understand the working of the algorithm with the help of the following example.
 Step1: Initially queue and visited arrays are empty.
-</p>
 
 ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/8acdebf8-ecc2-4d10-a208-45cce441f059)
 
@@ -54,22 +57,25 @@ Remove node 4 from the front of queue and visit the unvisited neighbours and pus
 Now, Queue becomes empty, So, terminate these process of iteration.
 
 
-<hr>
-<h2>Algorithm:</h2>
-<hr>
-<ol>
-  <li>Construct a Graph with Nodes and Edges</li>
- <li>Breadth First Uses Queue and iterates through the Queue for Traversal.</li>
-  <li>Insert a Start Node into the Queue.</li>
-<li>Find its Successors Or neighbors and Check whether the node is visited or not.</li>
-<li>If Not Visited, add it to the Queue. Else Continue.</li>
-<li>Iterate steps 4 and 5 until all nodes get visited, and there are no more unvisited nodes.</li>
 
-</ol>
+# Algorithm:
 
-<hr>
-<h3>Sample Input</h3>
-<hr>
+Construct a Graph with Nodes and Edges
+
+Breadth First Uses Queue and iterates through the Queue for Traversal.
+
+Insert a Start Node into the Queue.
+
+Find its Successors Or neighbors and Check whether the node is visited or not.
+  
+If Not Visited, add it to the Queue. Else Continue.
+
+Iterate steps 4 and 5 until all nodes get visited, and there are no more unvisited nodes.
+
+
+
+# Sample Input
+
 7 9 <BR>
 A B <BR>
 A C <BR>
@@ -80,16 +86,14 @@ C D <BR>
 D E <BR>
 D G <BR>
 G F <BR>
-<hr>
-<h3>Sample Output</h3>
-<hr>
-['A', 'B', 'C', 'F', 'E', 'D', 'G']
 
-<hr>
+# Sample Output
 
-<hr>
-<h3>Sample Input</h3>
-<hr>
+
+
+
+# Sample Input
+
 5 6 <BR>
 0 1 <BR>
 0 2 <BR>
@@ -97,14 +101,12 @@ G F <BR>
 1 3 <BR>
 2 4 <BR>
 3 4 <BR>
-<hr>
-<h3>Sample Output</h3>
-<hr>
-['0', '1', '2', '3', '4']
-<hr>
-<h3>Result:</h3>
-<hr>
-<p>Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.</p>
+
+# Sample Output
+
+# Result:
+
+Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.
 
 
 
