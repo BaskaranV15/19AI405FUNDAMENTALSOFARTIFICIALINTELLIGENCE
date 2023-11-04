@@ -21,6 +21,7 @@ To ImplementA * Search algorithm for a Graph using Python 3.
        parents to q
    
     d) for each successor
+    
         i) if successor is the goal, stop search
         
         ii) else, compute both g and h for successor
@@ -47,7 +48,7 @@ To ImplementA * Search algorithm for a Graph using Python 3.
     e) push q on the closed list
     end (while loop)
 
-Sample Graph I
+
 
 # program
 ```
@@ -156,6 +157,7 @@ print(graph)
 aStarAlgo('A', 'G')
 
 ```
+# Sample Graph I
 ![image](https://github.com/natsaravanan/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/87870499/b1377c3f-011a-4c0f-a843-516842ae056a)
 
 # Sample Input
